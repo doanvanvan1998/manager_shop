@@ -20,7 +20,7 @@ namespace ManagerShop.Controllers
         {
             return "helllo";
         }
-        [HttpPost]
+        [HttpGet]
         [Route("/save")]
         public async Task<IActionResult>  Save()
         {

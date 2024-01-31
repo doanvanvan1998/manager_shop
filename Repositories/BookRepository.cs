@@ -14,8 +14,16 @@ namespace ManagerShop.Repositories
 
         public List<Book> getAll()
         {
-            List<Book> books = _myContext.Books.ToList();
-            return books;
+            try
+            {
+                List<Book> books = _myContext.Books.ToList();
+                return books;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+           
         }
     }
 }

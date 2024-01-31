@@ -1,5 +1,6 @@
 ﻿using ManagerShop.Model;
 using ManagerShop.Repositories;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace ManagerShop.Services
 {
@@ -14,8 +15,16 @@ namespace ManagerShop.Services
 
         public List<Book> getAll()
         {
-            List<Book> books = repository.getAll();
-            return books;
+            try
+            {
+                List<Book> books = repository.getAll();
+                return books;
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+           
         }
     }
 
